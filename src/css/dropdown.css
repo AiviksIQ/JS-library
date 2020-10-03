@@ -1,0 +1,30 @@
+.dropdown .trigger {
+    border-bottom: 1px solid aquamarine;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown .trigger::after {
+    content: ">";
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    transform: rotate(90deg) scale(0.5, 1);
+    font-weight: 500;
+    transition: transform 0.3s;
+}
+
+.dropdown .trigger.active::after {
+    transform: rotate(-90deg) scale(0.5, 1);
+}
+
+.dropdown .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.dropdown .content.active {
+    max-height: 100%;
+}
